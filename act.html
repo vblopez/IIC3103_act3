@@ -1,7 +1,27 @@
-<script src="https://integracion-actividad-3.herokuapp.com/trucks/socket.io.js"></script>
-<script>
- var socket = io("https://integracion-actividad-3.herokuapp.com", { path: "trucks" });
-socket.on('POSITION', function(msg){
-        console.log('CAMION ' + msg.code + ' posicion: ' + msg.position[0] + ',' + msg.position[1]);
-      });
-</script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IIC3103</title>
+    </head>
+    <body>
+        <h1>Actividad 3 clases IIC3103</h1>
+        <ul id='messages'>
+            POSICION CAMION
+        </ul>
+
+        <script src="https://integracion-actividad-3.herokuapp.com/trucks/socket.io.js"></script>
+        <script>
+            var socket = io("https://integracion-actividad-3.herokuapp.com", { path: "/trucks" });
+            socket.on('POSITION', function(msg){
+                    console.log('CAMION ' + msg.code + ' posicion: ' + msg.position[0] + ',' + msg.position[1]);
+                    var message = document.createElement('li')
+                    var content = document.createTextNode('CAMION ' + msg.code + ' posicion: ' + msg.position[0] + ',' + msg.position[1])
+                    message.appendChild(content)
+                    messages.appendChild(message)
+                
+                  });
+
+        </script>
+    </body>
+</html>
+
