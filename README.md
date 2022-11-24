@@ -1,4 +1,4 @@
-#[IIC3103] Actividad 3: Websocket 
+# [IIC3103] Actividad 3: Websocket 
 
 - Desarrollada en clases
 - Ramo: Taller de Integración
